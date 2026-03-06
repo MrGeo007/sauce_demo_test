@@ -20,6 +20,7 @@ test('login KO affiche une erreur', async ({ page }) => {
 
   await loginPage.goto();
   await loginPage.fillCredentials('wrong@test.com', 'wrongpass');
+  await loginPage.submit();
 
-  await loginPage.expectErrorVisible();
+  await loginPage.expectErrorVisible('Epic sadface: Username and password do not match any user in this service');
 });

@@ -12,7 +12,7 @@ export class LoginPage {
     this.loginBtn = page.getByRole('button', { name: /login/i });
 
     // // Optionnel (messages / erreurs)
-    // this.errorAlert = page.locator('[data-testid="login-error"], .alert-danger, .error');
+    this.errorAlert = page.locator('[data-test="error"]');
   }
 
   async goto(url = 'https://www.saucedemo.com/') {
@@ -34,9 +34,8 @@ export class LoginPage {
     ]);
   }
 
-  // async login(email, password) {
-  //   await this.fillEmail(email);
-  //   await this.fillPassword(password);
+  // async login(username, password) {
+  //   await this.fillCredentials(username, password);
   //   await this.submit();
   // }
 
